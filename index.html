@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <style>
+      *::before,
+      *::after,
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .contacts__list{
+        height: 300px !important;
+        overflow: scroll;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+    </style>
+  </head>
+  <body>
+    
+    <header
+      class="bg-dark text-center text-light py-2 px-1 position-sticky top-0"
+    >
+      <div class="container">
+        <h1>Contact Lists</h1>
+      </div>
+    </header>
+    <template class="js-template">
+        <li class="p-2 text-center rounded border m-2 list">
+            <h4 class="contact__name">Name</h4>
+            <h4 class="contact__type">Type</h4>
+            <strong class="contact__phone d-block py-2"></strong>
+            <button class=" contact__delete btn btn-danger">Delete contact</button>
+        </li>
+
+    </template>
+    <main>
+        <section class="contact mt-3">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-6 border p-0 me-2  " style="border-radius: 7px ">
+                        
+                        <div class="contact__form   ">
+                            <div class="contact__top rounded-top bg-primary p-2 text-center text-light ">
+                                <h2>Enter Your Contact</h2>
+                            </div>
+                            <form class="py-3 px-4 text-center js-form-contact">
+                                <input class="form-control" type="text" name="name" placeholder="Enter your name"  aria-label="Enter your name" id="username" required >
+                                <input class="form-control my-3" placeholder="Who is it for you" aria-label="Who is it for you" list="person__type" id="person_type" required>
+                                <datalist id="person__type" >
+                                    <option value="relative">Relative</option>
+                                    <option value="friend">Friend</option>
+                                    <option value="family">Family</option>
+                                </datalist>
+                                <input class="form-control" type="text" name="number" placeholder="Enter your phone number"  aria-label="Enter your phone number" id="phone" required>
+                                <button class="mt-2 btn btn-primary" type="submit">Submit </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="contacts__list col-5 border p-0" style="border-radius: 7px;">
+                        <div class="contact__top position-sticky top-0 rounded-top bg-danger p-2 text-center text-light ">
+                            <h2>Contact Lists</h2>
+                        </div>
+                        <ul class="contact__inner-lists m-0 p-3 list-unstyled d-flex align-items-center justify-content-between flex-wrap js-contact-list">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.8/uuid.min.js" integrity="sha512-rV0Q1QWodkoLjts/qP2XHtjvUPTmN46k4eH0lzOR3mDui8a0YnL/uqydipXA9mQ2wG6J4imL0BO6/26rcFho7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./node_modules/bootstrap/dist/js/min.js"></script>
+    <script src="./Javascript/main.js"></script>
+  </body>
+</html>
